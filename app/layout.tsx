@@ -1,10 +1,10 @@
 import { ClerkProvider } from "@clerk/nextjs";
 import { Inter, Space_Grotesk } from "next/font/google";
 import type { Metadata } from "next";
+import { ThemeProvider } from "@/components/providers/theme-provider";
 
 import "./globals.css";
 import "@/styles/prism.css";
-import { ThemeProvider } from "@/context/ThemeProvider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -43,7 +43,15 @@ export default function RootLayout({
             },
           }}
         >
-          <ThemeProvider>{children}</ThemeProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+            // storageKey="dev-overflow-theme"
+          >
+            {children}
+          </ThemeProvider>
         </ClerkProvider>
       </body>
     </html>
