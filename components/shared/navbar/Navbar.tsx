@@ -24,8 +24,6 @@ const Navbar = () => {
       <GlobalSearch />
 
       <div className="flex-between  gap-5">
-        <Theme />
-
         <div className="flex-center w-[42px]">
           <SignedIn>
             <UserButton
@@ -41,6 +39,8 @@ const Navbar = () => {
             />
           </SignedIn>
         </div>
+
+        <Theme />
 
         <MobileNav />
       </div>
