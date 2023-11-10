@@ -1,6 +1,9 @@
 import { Button } from "@/components/ui/button";
 import NoResult from "@/components/shared/NoResult";
 import LocalSearchbar from "@/components/shared/search/LocalSearchbar";
+import HomeFilters from "@/components/home/HomeFilters";
+import Filter from "@/components/shared/Filter";
+import { HomePageFilters } from "@/constants/filters";
 import Link from "next/link";
 
 import type { Metadata } from "next";
@@ -31,10 +34,14 @@ export default async function Home() {
           otherClasses="flex-1"
         />
 
-        {/* <Filter /> */}
+        <Filter
+          filters={HomePageFilters}
+          otherClasses="min-h-[56px] sm:min-w-[170px]"
+          containerClasses="hidden max-md:flex"
+        />
       </div>
 
-      {/* <HomeFilters /> */}
+      <HomeFilters />
 
       <div className="mt-10 flex w-full flex-col gap-6">
         <NoResult
